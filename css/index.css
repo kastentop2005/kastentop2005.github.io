@@ -1,0 +1,137 @@
+/* Initial setup */
+
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+* {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  color: var(--accent-color);
+}
+
+:root {
+  --accent-color: #0094ff;
+  --dark-mode: #272822;
+  --light-mode: white;
+}
+
+body {
+  background-color: var(--dark-mode);
+  color: white;
+}
+
+/* Header */
+
+.container{
+  margin-top: 5rem;
+}
+
+.nav__cont {
+  font-size: 40px;
+  background-image: linear-gradient(45deg, #f3ec78, #af4261);
+  border-radius: 12px;
+  margin: 10px;
+}
+
+.navigation {
+  margin: 4px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Main */
+
+#avatar {
+  width: 100px;
+  height: 100px;
+  border-radius: 50px;
+}
+
+.bio__cont {
+  border: 2px solid white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+  max-width: 650px;
+  transition-duration: 0.3s;
+}
+
+.main__cont {
+  border: 2px solid white;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: clamp(200px, 100%, 800px);
+  padding: 10px;
+  transition-duration: 0.3s;
+}
+
+.card {
+  margin: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.main__cont:hover {
+  background-color: rgba(239, 222, 222, 0.2);
+  margin-right: 3px;
+}
+
+.info {
+  padding-left: 10px;
+}
+
+.contact {
+  display: grid;
+  align-items: center;
+  gap: 0px;
+  grid-template-columns: [link-1]1fr [link-2]1fr [link-3]1fr[link-end];
+  grid-template-areas: "link link link" "stuff";
+}
+
+.stuff {
+  background: rgb(185, 43, 39);
+  background: linear-gradient(
+    90deg,
+    rgba(185, 43, 39, 1) 0%,
+    rgba(21, 101, 192, 1) 100%
+  );
+  border: 2px rgb(185, 43, 39);
+}
+
+@media only screen and (max-width: 600px) {
+  .contact {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media only screen and (max-width: 420px) {
+  .contact {
+    grid-template-columns: 1fr;
+  }
+  .container{
+    margin-top: 0;
+  }
+}
+
+@media only screen and (min-width: 601px) {
+  .stuff {
+    grid-column-start: 1;
+    grid-column-end: 4;
+  }
+}
+
+/* Footer */
